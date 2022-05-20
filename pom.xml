@@ -8,6 +8,13 @@
     <artifactId>opengl-basic-utilities</artifactId>
     <version>1.0.0-SNAPSHOT</version>
 
+    <properties>
+        <maven.compiler.source>18</maven.compiler.source>
+        <maven.compiler.target>18</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    </properties>
+
     <url>https://github.com/mwttg-games/opengl-basic-utilities</url>
     <organization>
         <name>private</name>
