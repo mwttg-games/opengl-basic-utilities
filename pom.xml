@@ -15,6 +15,42 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
 
+    <profiles>
+        <profile>
+            <id>windows</id>
+            <activation>
+                <os>
+                    <family>windows</family>
+                </os>
+            </activation>
+            <properties>
+                <lwjgl.platfrom>natives-windows</lwjgl.platfrom>
+            </properties>
+        </profile>
+        <profile>
+            <id>linux</id>
+            <activation>
+                <os>
+                    <family>unix</family>
+                </os>
+            </activation>
+            <properties>
+                <lwjgl.platform>natives-linux</lwjgl.platform>
+            </properties>
+        </profile>
+        <profile>
+            <id>mac</id>
+            <activation>
+                <os>
+                    <family>mac</family>
+                </os>
+            </activation>
+            <properties>
+                <lwjgl.platform>natives-macos</lwjgl.platform>
+            </properties>
+        </profile>
+    </profiles>
+
     <url>https://github.com/mwttg-games/opengl-basic-utilities</url>
     <organization>
         <name>private</name>
