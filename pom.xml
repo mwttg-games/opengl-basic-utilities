@@ -15,6 +15,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <!-- Dependencies -->
         <basic.utilities.version>1.0.0-SNAPSHOT</basic.utilities.version>
+        <joml.version>1.10.4</joml.version>
         <logback.version>1.2.11</logback.version>
         <lwjgl.version>3.3.1</lwjgl.version>
         <!-- Plugins -->
@@ -35,6 +36,12 @@
             <groupId>io.github.mwttg-games</groupId>
             <artifactId>basic-utilities</artifactId>
             <version>${basic.utilities.version}</version>
+        </dependency>
+        <!-- JOML -->
+        <dependency>
+            <groupId>org.joml</groupId>
+            <artifactId>joml</artifactId>
+            <version>${joml.version}</version>
         </dependency>
         <!-- LWJGL -->
         <dependency>
