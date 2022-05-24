@@ -16,6 +16,10 @@ public final class CleanUp {
   private static final List<Integer> vertexArrayObjectIds = new ArrayList<>();
   private static final List<Integer> shaderProgramIds = new ArrayList<>();
   private static final List<Integer> shaderIds = new ArrayList<>();
+  private static final List<Integer> textureIds = new ArrayList<>();
+
+  private CleanUp() {
+  }
 
   public static void setGameWindowId(final Long id) {
     gameWindowId = id;
@@ -37,8 +41,14 @@ public final class CleanUp {
     shaderIds.add(id);
   }
 
+  public static void addTextureId(final int id) {
+    textureIds.add(id);
+  }
+
   public static void purge() {
     LOG.info("Start clean up process");
+    LOG.debug("Remove Textures");
+    textureIds.forEach(GL41::glDeleteTextures);
     LOG.debug("Remove Shaders");
     shaderIds.forEach(GL41::glDeleteShader);
     LOG.debug("Remove ShaderPrograms");
