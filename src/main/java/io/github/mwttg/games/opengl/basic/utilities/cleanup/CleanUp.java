@@ -2,6 +2,7 @@ package io.github.mwttg.games.opengl.basic.utilities.cleanup;
 
 import java.util.ArrayList;
 import java.util.List;
+import org.lwjgl.glfw.Callbacks;
 import org.lwjgl.glfw.GLFW;
 import org.lwjgl.opengl.GL41;
 import org.slf4j.Logger;
@@ -62,7 +63,9 @@ public final class CleanUp {
   }
 
   private static void cleanUpGameWindow() {
+    Callbacks.glfwFreeCallbacks(gameWindowId);
     GLFW.glfwDestroyWindow(gameWindowId);
     GLFW.glfwTerminate();
+    GLFW.glfwSetErrorCallback(null).free();
   }
 }
