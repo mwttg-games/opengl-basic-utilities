@@ -14,10 +14,15 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <!-- Dependencies -->
+        <apache.commons.version>3.12.0</apache.commons.version>
         <basic.utilities.version>1.0.0-SNAPSHOT</basic.utilities.version>
         <joml.version>1.10.4</joml.version>
         <logback.version>1.2.11</logback.version>
         <lwjgl.version>3.3.1</lwjgl.version>
+        <!-- Dependencies for Tests -->
+        <assertJ.version>3.22.0</assertJ.version>
+        <mockito.version>4.5.1</mockito.version>
+        <testng.version>7.6.0</testng.version>
         <!-- Plugins -->
         <checkstyle.maven.plugin.version>3.1.2</checkstyle.maven.plugin.version>
         <checkstyle.version>10.2</checkstyle.version>
@@ -36,6 +41,12 @@
             <groupId>io.github.mwttg-games</groupId>
             <artifactId>basic-utilities</artifactId>
             <version>${basic.utilities.version}</version>
+        </dependency>
+        <!-- Apache Commons -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>${apache.commons.version}</version>
         </dependency>
         <!-- JOML -->
         <dependency>
@@ -98,6 +109,25 @@
             <artifactId>lwjgl-stb</artifactId>
             <version>${lwjgl.version}</version>
             <classifier>${lwjgl.platform}</classifier>
+        </dependency>
+        <!-- Dependencies for Tests -->
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+            <version>${assertJ.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>${mockito.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>${testng.version}</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 
