@@ -57,34 +57,34 @@ public final class MeshFactory {
   }
 
   /**
-   * Creates a Mesh containing several (size = animationSteps) planes. The planes are always the same plane (geometry), but
-   * the UV coordinates are different. The UV coordinates split a texture (from left to right) in equal (animationSteps)
-   * sprites.
+   * Creates a Mesh containing several (size = maxFrames) planes. One plane is build with two triangles. The planes are always
+   * the same plane (geometry), but the UV coordinates are different. The UV coordinates split a texture (from left to right)
+   * in equal (maxFrames) sprite frames.
    *
-   * @param animationSteps the amount of (same) planes, equals the amount of sprites used for an animation
-   * @param width          the width of the plane
-   * @param height         the height of the plane
+   * @param maxFrames the amount of (same) planes, equals the amount of frames used for an animation
+   * @param width     the width of the plane
+   * @param height    the height of the plane
    * @return a {@link Mesh} including geometry and texture data
    */
-  public static Mesh createAnimatedSprite(final int animationSteps, final float width, final float height) {
+  public static Mesh createAnimatedSprite(final int maxFrames, final float width, final float height) {
     var geometry = new float[] {};
-    for (int index = 0; index < animationSteps; index++) {
+    for (int index = 0; index < maxFrames; index++) {
       final var plane = createGeometry(width, height);
       geometry = ArrayUtils.addAll(geometry, plane);
     }
 
     var uvCoordinates = new float[] {};
-    for (int index = 0; index < animationSteps; index++) {
-      final var plane = createUvCoordinates(index, animationSteps);
+    for (int index = 0; index < maxFrames; index++) {
+      final var plane = createUvCoordinates(index, maxFrames);
       uvCoordinates = ArrayUtils.addAll(uvCoordinates, plane);
     }
 
     return new Mesh(geometry, uvCoordinates);
   }
 
-  private static float[] createUvCoordinates(final int currentSpriteIndex, final int maxSprites) {
-    final var spriteWidth = 1.0f / (float) maxSprites;
-    final var left = spriteWidth * currentSpriteIndex;
+  private static float[] createUvCoordinates(final int currentFrameIndex, final int maxFrames) {
+    final var spriteWidth = 1.0f / (float) maxFrames;
+    final var left = spriteWidth * currentFrameIndex;
     final var right = left + spriteWidth;
 
     return new float[] {
