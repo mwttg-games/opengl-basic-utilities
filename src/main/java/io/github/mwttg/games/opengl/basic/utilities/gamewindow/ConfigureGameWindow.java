@@ -27,6 +27,7 @@ final class ConfigureGameWindow {
     GL41.glClearColor(red, green, blue, 1.0f);
     GLFW.glfwSwapInterval(vsync);
     GLFW.glfwShowWindow(gameWindowId);
+    GLFW.glfwSetInputMode(gameWindowId, GLFW.GLFW_STICKY_KEYS, GLFW.GLFW_TRUE);
     GL41.glEnable(GL41.GL_DEPTH_TEST);
     GL41.glEnable(GL41.GL_BLEND);
     GL41.glBlendFunc(GL41.GL_SRC_ALPHA, GL41.GL_ONE_MINUS_SRC_ALPHA);
