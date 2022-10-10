@@ -21,6 +21,9 @@ public final class VertexArrayObject {
     GL41.glBindBuffer(GL41.GL_ARRAY_BUFFER, uvVboId);
     GL41.glVertexAttribPointer(1, 2, GL41.GL_FLOAT, false, 0, 0);
 
+    GL41.glEnableVertexAttribArray(0); // vertices
+    GL41.glEnableVertexAttribArray(1); // texture coordinates
+
     return id;
   }
 }
